@@ -29,8 +29,6 @@ class Jzt_Api:
         payload = 'phone={}&password={}&login_type=1'.format(phone, password)
         response = requests.request("POST", url, headers=self.headers, data=payload)
         res_login = response.json()
-        # Token = self.get_token(res_login, 'token_name')
-        # print(json.dumps(res_login, indent=4, ensure_ascii=False))
         return  res_login
 
     # 金智塔——我的--主页

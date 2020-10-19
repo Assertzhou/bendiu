@@ -67,7 +67,8 @@ if __name__ == '__main__':
     now = time.strftime("%Y-%m-%d %H_%M_%S")
     uli = 'G:\\APP\\Jzt_api\\' + now + '.html'
     fp = open(uli, 'wb')
-    runner = HTMLTestRunner(stream=fp, title='这是我的自动化测试报告', description='测试用例执行情况：')
+    runner = HTMLTestRunner(stream=fp, title='金智塔接口测试报告', description='测试用例执行情况：')
     runner.run(all_case())   #run所有测试用例
+
 
 
