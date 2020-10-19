@@ -70,5 +70,5 @@ if __name__ == '__main__':
     runner = HTMLTestRunner(stream=fp, title='金智塔接口测试报告', description='测试用例执行情况：')
     runner.run(all_case())   #run所有测试用例
 
-
+print('测试用例是否执行')
 
