@@ -1,12 +1,12 @@
 # conding = utf-8
 import requests
-import unittest
-from Jzt_api.api_Jzt import Jzt_Api
-import HTMLTestRunner
-from HTMLTestRunner import HTMLTestRunner
 import time
 import os
 import pytest
+import unittest
+from Jzt_api.api_Jzt import Jzt_Api
+from HTMLTestRunner import HTMLTestRunner
+
 
 
 class Testcases(unittest.TestCase):
@@ -49,29 +49,31 @@ class Testcases(unittest.TestCase):
         test06 = self.jzt_api.my_home('2040', token)
         self.assertEqual(test06['status'], 200, '测试失败')
 
-
-import time
-
-
-def all_case():
-    case_dir = 'G:\\APP\\Jzt_api'  # 存放测试用例文件的目录
-    testcase = unittest.TestSuite()  # 构造测试集
-    discover = unittest.defaultTestLoader.discover(case_dir, pattern='test*.py',
-                                                   top_level_dir=None)  # 使用discover方法筛选出测试用例
-    for test_suit in discover:  # 循环添加到测试套件中
-        for test_case in test_suit:
-            testcase.addTest(test_case)
-    print(testcase)
-    return testcase
-
-
 if __name__ == '__main__':
-    now = time.strftime("%Y-%m-%d %H_%M_%S")
-    uli = 'G:\\APP\\Jzt_api\\' + now + '.html'
-    fp = open(uli, 'wb')
-    runner = HTMLTestRunner(stream=fp, title='金智塔接口测试报告', description='测试用例执行情况：')
-    runner.run(all_case())  # run所有测试用例
+    unittest.main()
 
-
-def test011():
-    print('测试用例是否执行')
+# import time
+#
+#
+# def all_case():
+#     case_dir = 'G:\\APP\\Jzt_api'  # 存放测试用例文件的目录
+#     testcase = unittest.TestSuite()  # 构造测试集
+#     discover = unittest.defaultTestLoader.discover(case_dir, pattern='test*.py',
+#                                                    top_level_dir=None)  # 使用discover方法筛选出测试用例
+#     for test_suit in discover:  # 循环添加到测试套件中
+#         for test_case in test_suit:
+#             testcase.addTest(test_case)
+#     print(testcase)
+#     return testcase
+#
+#
+# if __name__ == '__main__':
+#     now = time.strftime("%Y-%m-%d %H_%M_%S")
+#     uli = 'G:\\APP\\Jzt_api\\' + now + '.html'
+#     fp = open(uli, 'wb')
+#     runner = HTMLTestRunner(stream=fp, title='金智塔接口测试报告', description='测试用例执行情况：')
+#     runner.run(all_case())  # run所有测试用例
+#
+#
+# def test011():
+#     print('测试用例是否执行')
