@@ -29,12 +29,14 @@ class Jzt_Api:
         payload = 'phone={}&password={}&login_type=1'.format(phone, password)
         response = requests.request("POST", url, headers=self.headers, data=payload)
         res_login = response.json()
-        return  res_login
+        return res_login
 
     # 金智塔——我的--主页
-    def my_home(self, id,Token):
+    def my_home(self, id, Token):
         date = 'member_id={}&token_name={}'.format(id, Token[0])
         url = "http://api-jzt.miaoshare.net/personal/ucenter/d_index"
         response = requests.request("POST", url, headers=self.headers, data=date)
         # print(json.dumps(response.json(), indent=4, ensure_ascii=False))
         return response.json()
+
+# 测试查看
